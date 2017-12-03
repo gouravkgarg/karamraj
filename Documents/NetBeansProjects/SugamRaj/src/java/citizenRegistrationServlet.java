@@ -63,16 +63,16 @@ public class citizenRegistrationServlet extends HttpServlet {
                  ResultSet rs=pst2.executeQuery();
 
                  int requestId = 0;
-                 out.println("Hiii");
+                 
                  while(rs.next()){
                      requestId=Integer.parseInt(rs.getString(1));
-                     System.out.println("REquest Id"+requestId);
+                     System.out.println("Request Id"+requestId);
                  }
                  
                  
                  PreparedStatement pst3=(PreparedStatement) con.prepareStatement("insert into stages values(?,?,?,?)");
                  pst3.setInt(1,requestId);
-                 pst3.setString(2,"first");
+                 pst3.setString(2,"1");
                  pst3.setString(3,"1");
                  pst3.setString(4,"Pending");
                  int x=pst3.executeUpdate();

@@ -50,7 +50,7 @@ public class PerformanceTrakker extends HttpServlet {
                  int t=0;
                  if(status.equalsIgnoreCase("accepted")){
                     if(empId.equalsIgnoreCase("1")){
-                        pst.setString(1,"Address Verification");
+                        pst.setString(1,"2");
                         pst.setString(2,"2");
                         pst.setString(3,"accepted");
                         pst.setString(4,reqId);
@@ -59,7 +59,7 @@ public class PerformanceTrakker extends HttpServlet {
                     }
                     
                    if(empId.equalsIgnoreCase("2")){
-                        pst.setString(1,"Pension Card issued");
+                        pst.setString(1,"3");
                         pst.setString(2,"3");
                         pst.setString(3,"accepted");
                        t=pst.executeUpdate();
@@ -67,7 +67,7 @@ public class PerformanceTrakker extends HttpServlet {
                    
                    
                     if(empId.equalsIgnoreCase("3")){
-                        pst.setString(1,"Pension Card dispatched");
+                        pst.setString(1,"4");
                         pst.setString(2,"4");
                         pst.setString(3,"accepted");
                        t=pst.executeUpdate();

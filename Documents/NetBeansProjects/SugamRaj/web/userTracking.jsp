@@ -28,7 +28,8 @@ form  {
 p     { display: table-row;  }
 label, input, select, button, form p span  { display: table-cell; }
 button {
-  margin-left: 55%;
+    margin-top: 10%;
+  margin-left: 8%;
   width: 200px;
   height: 50px;
   font-size: 115%;
@@ -90,7 +91,7 @@ a {
     width: 60%;
     padding: 30px;
     margin: 0 auto;
-    margin-top: 180px;
+    margin-top: 80px;
     margin-bottom: 40px;
     transition: 2s ease all;
 }
@@ -244,15 +245,23 @@ body {
        <div>
     <img src="karamraj.png" width="125" style="padding: 10px; position: absolute; left:0; top:0;">
   </div>
-      <form method='POST' action='userTracking.jsp'>
-      <input type='text' name='searchBar' value='' placeholder='Input your request ID here....'>
+      <form style="margin-top: 5%;" method='POST' action='userTracking.jsp'>
+      <input type='text' style="height: 40px; width: 420px" name='searchBar' value='' placeholder='Input your request ID here....'>
+      <br>
       <button type='submit' name='Search'>Search</button>
       </form>
       <%
+          String reqid=request.getParameter("tid");
           if(request.getParameter("searchBar")==null){
               System.out.println("Enter an valid id");
           } else {
-          int id=Integer.parseInt(request.getParameter("searchBar"));
+              int id=0;
+              if(request.getParameter("tid")!=null ){
+                  id= Integer.parseInt(request.getParameter("tid"));
+              } else if(request.getParameter("searchBar")!=null){
+                  id=Integer.parseInt(request.getParameter("searchBar"));
+              }
+          
 //String id = request.getParameter("userId");
 String driverName = "com.mysql.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://localhost:3306/";
@@ -361,7 +370,7 @@ e.printStackTrace();
       var $_active = $point_arr.eq(active)
       
       $point_arr
-        .removeClass('completed active')
+        .removeClass('active')
         .slice(0, active).addClass('completed')
       
       $_active.addClass('active');

@@ -108,7 +108,7 @@ a {
            %>
        
             
-        We have received your application.<%= reqId %> You can use <a href="track.html?tid=29812">this link</a> to track your application status (or manually enter your tracking id here).
+        We have received your application. Your Request id is <%= reqId %>. You can use <a href="userTracking.jsp?tid=<%= reqId %>">this link</a> to track your application status (or manually enter your tracking id here).
     </p>
     </div>
     <div class="foot"> 
